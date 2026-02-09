@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(body: GradientContainer()), // <--- Added comma
     ),
   );
@@ -14,11 +14,11 @@ class GradientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            const Color.fromARGB(255, 26, 2, 80),
-            const Color.fromARGB(255, 111, 67, 173),
+            Color.fromARGB(255, 26, 2, 80),
+            Color.fromARGB(255, 111, 67, 173),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
