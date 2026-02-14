@@ -8,6 +8,8 @@ class GradientContainer extends StatelessWidget {
 
   final List<Color> colors;
 
+  void handleOnpress() {}
+
   @override
   Widget build(context) {
     return Container(
@@ -20,9 +22,17 @@ class GradientContainer extends StatelessWidget {
       ),
 
       child: Center(
-        child: Image.asset(
-          'assets/images/image-1.png',
-          width: 200,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset('assets/images/image-1.png', width: 200),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: handleOnpress,
+              style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 18)),
+              child: Text('Preview images'),
+            ),
+          ],
         ), // <--- Added comma
       ), // <--- Added comma
     );
