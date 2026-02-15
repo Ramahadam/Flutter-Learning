@@ -1,3 +1,4 @@
+import 'package:first_app/image_preview.dart';
 import 'package:flutter/material.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -8,7 +9,9 @@ class GradientContainer extends StatelessWidget {
 
   final List<Color> colors;
 
-  void handleOnpress() {}
+  void previewImage() {
+    print('======>Previewing image ');
+  }
 
   @override
   Widget build(context) {
@@ -21,20 +24,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
 
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset('assets/images/image-1.png', width: 200),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: handleOnpress,
-              style: TextButton.styleFrom(textStyle: TextStyle(fontSize: 18)),
-              child: Text('Preview images'),
-            ),
-          ],
-        ), // <--- Added comma
-      ), // <--- Added comma
+      child: Center(child: ImagePreview()), // <--- Added comma
     );
   }
 }
