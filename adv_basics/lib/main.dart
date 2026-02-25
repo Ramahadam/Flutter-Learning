@@ -1,28 +1,13 @@
+import 'package:adv_basics/bg_wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(backgroundColor: Colors.purple, body: BgWrapper()),
+      home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 92, 51, 163),
+        body: BgWrapper(),
+      ),
     ),
   );
-}
-
-class BgWrapper extends StatelessWidget {
-  const BgWrapper({super.key});
-
-  @override
-  Widget build(context) {
-    return Center(
-      child: Align(
-        alignment: AlignmentDirectional.bottomCenter,
-        child: Column(
-          children: [
-            Image.asset('assets/images/quiz-logo.png'),
-            ElevatedButton(onPressed: () => {}, child: Text('Start Quiz')),
-          ],
-        ),
-      ),
-    );
-  }
 }
