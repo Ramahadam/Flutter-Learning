@@ -1,12 +1,23 @@
-import 'package:adv_basics/bg_wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:adv_basics/start_screen.dart';
 
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 92, 51, 163),
-        body: BgWrapper(),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 78, 13, 151),
+                const Color.fromARGB(255, 107, 15, 168),
+              ],
+              begin: AlignmentGeometry.topLeft,
+              end: AlignmentGeometry.bottomRight,
+            ),
+          ),
+          child: StartScreen(),
+        ),
       ),
     ),
   );
