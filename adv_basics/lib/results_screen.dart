@@ -41,7 +41,6 @@ class ResultsScreen extends StatelessWidget {
             ),
             QuestionsSummary(summaryData: summaryData),
             SizedBox(height: 30),
-            SizedBox(height: 30),
             TextButton(onPressed: () {}, child: Text('Restart Quiz')),
           ],
         ),
