@@ -37,10 +37,23 @@ class ResultsScreen extends StatelessWidget {
           children: [
             Text(
               'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly',
+              style: TextStyle(
+                color: const Color.fromARGB(255, 173, 128, 252),
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+              textAlign: TextAlign.center,
             ),
+            SizedBox(height: 30),
             QuestionsSummary(summaryData: summaryData),
             SizedBox(height: 30),
-            TextButton(onPressed: () {}, child: Text('Restart Quiz')),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Restart Quiz',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),
