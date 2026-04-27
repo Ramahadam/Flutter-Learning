@@ -4,9 +4,28 @@ import 'package:flutter/material.dart';
 var kColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 96, 59, 181),
 );
+
+var kDarkColorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: Color.fromARGB(255, 5, 99, 125),
+);
+
 void main() {
   runApp(
     MaterialApp(
+      darkTheme: ThemeData.dark().copyWith(
+        colorScheme: kDarkColorScheme,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kDarkColorScheme.primaryContainer,
+            textStyle: TextStyle(color: kDarkColorScheme.onPrimaryContainer),
+          ),
+        ),
+        cardTheme: CardThemeData().copyWith(
+          color: kDarkColorScheme.secondaryContainer,
+          margin: EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+        ),
+      ),
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
         appBarTheme: AppBarTheme().copyWith(
@@ -30,6 +49,7 @@ void main() {
           ),
         ),
       ),
+      themeMode: ThemeMode.system,
       home: Expenses(),
     ),
   );
